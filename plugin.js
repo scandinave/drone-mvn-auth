@@ -1,6 +1,16 @@
 'use strict';
 
 let fs = require('fs');
+const dotenv = require('dotenv');
+
+// If kubernetes env file exist, load it and overwrite existing env variable.
+// @see https://docs.drone.io/runner/kubernetes/overview/ Known Issues / Differences
+if(fs.existsSync('/run/drone/env')) {
+  const envConfig = dotenv.parse(fs.readFileSync('/run/drone/env'));
+  for (const k in envConfig) {
+    process.env[k] = envConfig[k];
+  }
+}
 
 /* eslint-disable no-console */
 const log = console.log;

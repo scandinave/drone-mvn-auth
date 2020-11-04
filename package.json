@@ -14,6 +14,9 @@
   },
   "author": "Robert Stettner <robert.stettner@gmail.com> (https://github.com/robertstettner)",
   "license": "MIT",
+  "dependencies": {
+    "dotenv": "^8.2.0"
+  },
   "devDependencies": {
     "coveralls": "^3.0.4",
     "eslint": "6.0.1",
@@ -23,6 +26,5 @@
     "should": "13.2.3",
     "should-sinon": "0.0.6",
     "sinon": "7.3.2",
-    "dotenv": "^8.2.0"
   }
 }
